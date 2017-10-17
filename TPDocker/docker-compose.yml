@@ -1,0 +1,17 @@
+version: '3'
+services:
+   client:
+      build: ./Doc1
+      ports:
+        - "8888:8080"
+      depends_on:
+        - db
+
+   db:
+      image: postgres:9.5
+      volumes:
+        - db_data:/var/lib/postgresql/data
+      container_name: db
+volumes:
+   db_data:
+
