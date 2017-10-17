@@ -1,0 +1,8 @@
+FROM postgres:9.5
+MAINTAINER Chanith ATTIA
+RUN apt-get -y update
+COPY ./init-db.sql /docker-entrypoint-initdb.d/
+WORKDIR /docker-entrypoint-initdb.d/
+VOLUME dbdata:/var/lib/postgresql/data
+
+

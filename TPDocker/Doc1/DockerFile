@@ -1,0 +1,7 @@
+FROM tomcat:8-jre8
+MAINTAINER Chanith ATTIA
+
+RUN apt-get -y update && apt-get install postgresql-9.5
+COPY ./dbproject.war /usr/local/tomcat/webapps
+WORKDIR /usr/local/tomcat/webapps
+
